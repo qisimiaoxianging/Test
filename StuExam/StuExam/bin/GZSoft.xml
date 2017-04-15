@@ -1,0 +1,1523 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GZSoft</name>
+    </assembly>
+    <members>
+        <member name="T:GZSoft.Utility.OutPut.MyXlsHelper">
+            <summary>
+            MyXls组件帮助类
+            </summary>
+        </member>
+        <member name="M:GZSoft.Utility.OutPut.MyXlsHelper.SendToExcel(System.Object,System.String,System.Int32)">
+            <summary>
+            导出EXCEL(WEB模式下直接调用)
+            </summary>
+            <param name="excelData">DataSet、DataTable（注意这2个数据源的EXCEL列标题为Caption，工作表名称：TableName）</param>
+            <param name="excelName">EXLCEL文件名称需要编码，如Server.UrlEncode("XX统计表")</param>
+            <param name="maxRecordCount">一个工作表对应的最大行数,默认和最大行数：65535</param>
+        </member>
+        <member name="M:GZSoft.Utility.OutPut.MyXlsHelper.CreateXlsData(System.Data.DataTable,org.in2bits.MyXls.XlsDocument,System.Int32)">
+            <summary>
+            导入数据
+            </summary>
+            <param name="dataTable"></param>
+            <param name="xls"></param>
+            <param name="maxRecordCount"></param>
+        </member>
+        <member name="T:GZSoft.Utility.ImageHelper">
+            <summary>
+            图片操作类（图片的比例缩小）
+            </summary>
+        </member>
+        <member name="F:GZSoft.Utility.ImageHelper.AllowExt">
+            <summary>
+            允许的扩展名
+            </summary>
+        </member>
+        <member name="M:GZSoft.Utility.ImageHelper.CheckValidExt(System.String,System.String)">
+            <summary>
+            检测扩展名是否为允许上传类型
+            参数说明：1、允许的扩展名，以“|”分隔，默认为.jpe|.jpeg|.jpg|.gif|.png|.tif|.tiff|.bmp  2、文件名扩展名
+            </summary>
+            <param name="allowExtIn">允许的扩展名，以“|”分隔，默认为.jpe|.jpeg|.jpg|.gif|.png|.tif|.tiff|.bmp</param>
+            <param name="sExt">文件名扩展名</param>
+            <returns>如果扩展名有效,返回true,否则返回false.</returns>
+        </member>
+        <member name="M:GZSoft.Utility.ImageHelper.CreateBigAndSmallImage(System.Drawing.Image,System.Int32,System.Int32,System.Int32,System.Int32,System.Drawing.Image@,System.Drawing.Image@)">
+            <summary>
+            从源Image同时生成一个小图和大图
+            参数说明：1、源Image 2、小图Width 3、小图Height 4、大图Width 5、大图Height 6、小图Image 7、大图Image
+            </summary>
+            <param name="sourceImage">源Image</param>
+            <param name="smallWidth">小图Width</param>
+            <param name="smallHeight">小图Height</param>
+            <param name="bigWidth">大图Width</param>
+            <param name="bigHeight">大图Height</param>
+            <param name="smallImage">小图Image</param>
+            <param name="bigImage">大图Image</param>
+        </member>
+        <member name="M:GZSoft.Utility.ImageHelper.CutAndSaveImage(System.Drawing.Image,System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+             按原比例缩小图片,并保存文件到指定路径
+            参数说明：1、源Image 2路径是否为完整路径 true为完整，false为相对路径 3、路径 4、小图Width 5、小图Height 6、图象质量
+            </summary>
+            <param name="sourceImage">源Image</param>
+            <param name="filePathSmall">路径</param>
+            <param name="smallWidth">小图Width</param>
+            <param name="smallHeight">小图Heigh</param>
+            <param name="quality">图象质量</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Utility.ImageHelper.CutAndSaveImage(System.Byte[],System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+             按原比例缩小图片,并保存文件到指定路径
+            参数说明：1、源Image的Byte[] 2路径是否为完整路径 true为完整，false为相对路径 3、路径 4、小图Width 5、小图Height 6、图象质量
+            </summary>
+            <param name="sourceByte">源Image 的Byte[]</param>
+            <param name="filePathSmall">路径</param>
+            <param name="smallWidth">小图Width</param>
+            <param name="smallHeight">小图Heigh</param>
+            <param name="quality">图象质量</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Utility.ImageHelper.CutImageByteToImage(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+             按原比例缩小图片(byte[] to Image)
+            参数说明：1、源Image 2、小图Width 3、小图Height
+            </summary>
+            <param name="sourceByte">源Image的字节数组</param>
+            <param name="smallWidth">小图Width</param>
+            <param name="smallHeight">小图Heigh</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Utility.ImageHelper.CutImageImageToByte(System.Drawing.Image,System.Int32,System.Int32)">
+            <summary>
+             按原比例缩小图片(Image to byte[])
+            参数说明：1、源Image 2、小图Width 3、小图Height
+            </summary>
+            <param name="sourceImage">源Image</param>
+            <param name="smallWidth">小图Width</param>
+            <param name="smallHeight">小图Heigh</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Utility.ImageHelper.CutImageByteToByte(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+             按原比例缩小图片(byte[] to byte[])
+            参数说明：1、源Image 2、小图Width 3、小图Height
+            </summary>
+            <param name="sourceByte">源Image的字节数组</param>
+            <param name="smallWidth">小图Width</param>
+            <param name="SmallHeight">小图Heigh</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Utility.ImageHelper.CutImage(System.Drawing.Image,System.Int32,System.Int32)">
+            <summary>
+             按原比例缩小图片
+            参数说明：1、源Image 2、小图Width 3、小图Height
+            </summary>
+            <param name="sourceImage">源Image</param>
+            <param name="smallWidth">小图Width</param>
+            <param name="smallHeight">小图Heigh</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Utility.ImageHelper.SaveImage(System.Drawing.Image,System.String,System.String)">
+            <summary>
+            保存图片默认质量与源图相同
+            参数说明：1、源Image 2、保存的完整路径 3、保存的类型
+            </summary>
+            <param name="image">Image 对象</param>
+            <param name="imagePath">保存的完整路径</param>
+            <param name="ext">保存的类型</param>
+        </member>
+        <member name="M:GZSoft.Utility.ImageHelper.SaveImage(System.Drawing.Image,System.String,System.String,System.Int32)">
+            <summary>
+            保存图片
+            参数说明：1、源Image 2、保存的完整路径 3、保存的类型 4、保存的质量
+            </summary>
+            <param name="image">Image 对象</param>
+            <param name="imagePath">保存的完整路径</param>
+            <param name="ext">保存的类型</param>
+            <param name="quality">保存的质量</param>
+        </member>
+        <member name="M:GZSoft.Utility.ImageHelper.GetCodecInfo(System.String)">
+            <summary>
+            获取图像编码解码器的所有相关信息
+            参数说明：1、保存图象的扩展名
+            </summary>
+            <param name="Ext">保存图象的扩展名</param>
+            <returns>返回图像编码解码器的所有相关信息</returns>
+        </member>
+        <member name="M:GZSoft.Utility.ImageHelper.ImageToBtye(System.Drawing.Image)">
+            <summary>
+            Image对象转换成byte[]
+            参数说明：1、Image
+            </summary>
+            <param name="image">Image</param>
+            <returns>byte[]</returns>
+        </member>
+        <member name="M:GZSoft.Utility.ImageHelper.BtyeToImage(System.Byte[])">
+            <summary>
+            用于转换byte[]到Image
+            参数说明：1、byte[]
+            </summary>
+            <param name="byteIn">byte[]</param>
+            <returns>Image</returns>
+        </member>
+        <member name="M:GZSoft.Utility.ImageHelper.GetstrImageSize(System.String)">
+            <summary>
+            等到图片大小字符串
+            </summary>
+            <param name="fullPath"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GZSoft.Utility.FileHelper">
+            <summary>
+            文件操作类
+            </summary>
+        </member>
+        <member name="M:GZSoft.Utility.FileHelper.GetPathInfo(System.String,System.IO.FileInfo[]@,System.IO.DirectoryInfo[]@)">
+            <summary>
+            取指定路径的文件夹下，文件信息及文件夹信息,如果不存在此路径，则新增此文件夹
+             参数说明：1、路径是否为完整路径 true为完整，false为相对路径 2、路径 3、文件信息 4、文件夹信息
+            </summary>
+            <param name="directoryPath">路径</param>
+            <param name="fileinfo">文件信息</param>
+            <param name="directoryinfo">文件夹信息</param>
+        </member>
+        <member name="M:GZSoft.Utility.FileHelper.CreateFolder(System.String)">
+            <summary>
+            创建一个文件夹
+            参数说明：1、路径是否为完整路径 true为完整，false为相对路径 2、路径 
+            </summary>
+            <param name="folderName">路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Utility.FileHelper.DeleteChildFolder(System.String)">
+            <summary>
+            删除指定目录下所有内容
+            参数说明：1、路径是否为完整路径 true为完整，false为相对路径 2、路径 
+            </summary>
+            <param name="FolderPathName">路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Utility.FileHelper.GetDirectoryInfoToDataTable(System.String)">
+            <summary>
+            取指定路径下的文件夹的信息，并转换成DataTable(Name-文件名,FullName-完整目录)
+            参数说明：1、路径是否为完整路径 true为完整，false为相对路径 2、路径 
+            </summary>
+            <param name="folderPath">路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Utility.FileHelper.GetFileInfoToDataTable(System.String)">
+            <summary>
+            取指定路径下的文件夹的信息，并转换成DataTable(Name,FullName,Length,Extension,CreationTime,CreationTimeUtc,LastWriteTime,LastWriteTimeUtc)
+            参数说明：1、路径是否为完整路径 true为完整，false为相对路径 2、路径 
+            </summary>
+            <param name="FilePath">路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Utility.FileHelper.ReplaceFile(System.String,System.String,System.String[],System.String,System.String,System.String,System.String)">
+            <summary>
+            替换一个文件内容
+            </summary>
+            <param name="templetPath">模板文件</param>
+            <param name="templetEncod">模板文件编码</param>
+            <param name="formatTxt">替换的内容</param>
+            <param name="createPath">生产路径，不包括文件名</param>
+            <param name="createName">文件名包括</param>
+            <param name="imagesPath">图片路径替换</param>
+            <param name="encod"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Utility.FileHelper.ReadFile(System.String,System.String)">
+            <summary>
+            读取一个文件返回文件内容
+            </summary>
+            <param name="filePath">文件路径</param>
+            <param name="encod">文件编码名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Utility.FileHelper.WriteFile(System.String,System.String,System.String)">
+             <summary>
+            写一个文件
+             参数说明：1、路径是否为完整路径 true为完整，false为相对路径 2、路径  3、内容 4、文件编码（默认为GB2312）
+             </summary>
+             <param name="filePath">路径</param>
+             <param name="fileContent">内容</param>
+             <param name="encodeName">文件编码</param>
+             <returns></returns>
+        </member>
+        <member name="M:GZSoft.Utility.FileHelper.ReadWrite(System.String,System.String)">
+            <summary>
+            读取一个文件
+            参数说明：1、路径是否为完整路径 true为完整，false为相对路径 2、路径 3、文件编码（默认为GB2312）
+            </summary>
+            <param name="filePath">路径</param>
+            <param name="encodeName">编码（默认GB2312）</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Utility.FileHelper.DeleteFile(System.String)">
+            <summary>
+            删除一个文件
+            </summary>
+            <param name="filePath">路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Utility.FileHelper.CopyFile(System.String,System.String)">
+            <summary>
+            复制一个文件
+             参数说明：1、路径是否为完整路径 true为完整，false为相对路径 2、源文件路径 3、目标文件路径
+            </summary>
+            <param name="sourcePath">源文件</param>
+            <param name="destFile">目标文件</param>
+        </member>
+        <member name="M:GZSoft.Utility.FileHelper.GetstrFileLength(System.Int64)">
+            <summary>
+            返回文件大小(以字符表示)
+            </summary>
+            <param name="fileLength"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Utility.FileHelper.Write(System.String,System.Int64,System.IO.Stream)">
+            <summary>
+            分块写入文件，以便能够上传大文件,返回写入后的文件长度
+            </summary>
+            <param name="filePath">文件全路径</param>
+            <param name="startIndex">开始位置</param>
+            <param name="stream">Stream</param>
+            <returns>返回新位置，以便上传客户端能够判断准确性</returns>
+        </member>
+        <member name="T:GZSoft.Utility.LogHelper">
+            <summary>
+            日至帮助类
+            </summary>
+        </member>
+        <member name="M:GZSoft.Utility.LogHelper.Debug(System.String)">
+            <summary>
+            Debug
+            </summary>
+            <param name="message">信息</param>
+        </member>
+        <member name="M:GZSoft.Utility.LogHelper.Error(System.String)">
+            <summary>
+            Error
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:GZSoft.Utility.LogHelper.Fatal(System.String)">
+            <summary>
+            Fatal
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:GZSoft.Utility.LogHelper.Info(System.String)">
+            <summary>
+            Info
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:GZSoft.Utility.LogHelper.Warn(System.String)">
+            <summary>
+            Warn
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:GZSoft.Safety.EncryptDecryptHelper">
+            <summary>
+            加密解密帮助类
+            </summary>
+        </member>
+        <member name="M:GZSoft.Safety.EncryptDecryptHelper.EncodePassword(System.String,System.String)">
+            <summary>
+            加密密码
+            参数说明：1、密码 2、权值
+            </summary>
+            <param name="password">密码</param>
+            <param name="salt">权值</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Safety.EncryptDecryptHelper.Encrypt(System.String)">
+            <summary>
+            加密字符串
+            </summary>
+            <param name="sourceData">原文</param>
+            <returns>加密后的字符串</returns>
+        </member>
+        <member name="M:GZSoft.Safety.EncryptDecryptHelper.Decrypt(System.String)">
+            <summary>
+            解密字符串
+            </summary>
+            <param name="sourceData">密文</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Safety.EncryptDecryptHelper.RSAEncrypt(System.String,System.String)">
+            <summary>
+            RSA加密
+            </summary>
+            <param name="publickey"></param>
+            <param name="content"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Safety.EncryptDecryptHelper.RSADecrypt(System.String,System.String)">
+            <summary>
+            RSA解密
+            </summary>
+            <param name="privatekey"></param>
+            <param name="content"></param>
+            <returns></returns>
+        </member>
+        <member name="P:GZSoft.Safety.EncryptDecryptHelper.GenerateSalt">
+            <summary>
+            取一个随机权值，用于加密密码等
+            </summary>
+        </member>
+        <member name="T:GZSoft.Utility.GZBasic">
+            <summary>
+            杂项-帮助类（增加并封装Cbase.cs的常用函数）
+            </summary>
+        </member>
+        <member name="M:GZSoft.Utility.GZBasic.GetConfigString(System.String)">
+            <summary>
+            从config取配置信息
+            </summary>
+            <param name="key">key</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Utility.GZBasic.RemoveSpaceBetweenTags(System.String)">
+            <summary>
+            去除HTML的标签之间的空格
+            </summary>
+            <param name="html">源文件</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Utility.GZBasic.LowerToUpperNum(System.String)">
+            <summary>
+            把小写数字转换成大写数字返回
+            </summary>
+            <param name="hj">小写浮点数（或整数）的字符串</param>
+        </member>
+        <member name="M:GZSoft.Utility.GZBasic.strreverse(System.String)">
+            <summary>
+            倒转字符串
+            </summary>
+            <param name="str">需倒转的字符串</param>
+        </member>
+        <member name="M:GZSoft.Utility.GZBasic.LowerToUpperDate(System.String)">
+            <summary>
+            把小写日期（年、月、日其中之一）转换成大写日期返回
+            小写的年、月或日的字符串，只能是其中之一，不可同时转换
+            </summary>
+            <param name="sj">小写的年、月或日的字符串，只能是其中之一，不可同时转换</param>
+        </member>
+        <member name="M:GZSoft.Utility.GZBasic.GetDecimal(System.Object)">
+            <summary>
+            从OBJECT转换成Decimal,为空或错误返回0
+            </summary>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Utility.GZBasic.LowerToUpperSDate(System.String)">
+             <summary>
+             把小写日期（年、月、日其中之一）转换成小写日期返回
+            参数：1、 小写的年、月或日的字符串，只能是其中之一，不可同时转换
+             </summary>
+             <param name="sj">小写的年、月或日的字符串，只能是其中之一，不可同时转换</param>
+        </member>
+        <member name="M:GZSoft.Utility.GZBasic.MakeRandomNumber">
+            <summary>
+            随机数产生函数，返回25随机数。
+            </summary>
+        </member>
+        <member name="M:GZSoft.Utility.GZBasic.MakeRandomNumber(System.Int32)">
+            <summary>
+            随机数产生函数，返回指定长度随机数。
+            </summary>
+        </member>
+        <member name="M:GZSoft.Utility.GZBasic.MatchingCount(System.String,System.String)">
+            <summary>
+            在母串中查找子串出现的次数。
+            </summary>
+            <param name="MainStr"></param>
+            <param name="ChildStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Utility.GZBasic.MatchingIndex(System.String,System.String,System.Int32)">
+            <summary>
+            返回子串在母串中第N次出现的位置(从0开始)。若返回-1表示未找到或N值有误。
+            </summary>
+            <param name="MainStr"></param>
+            <param name="ChildStr"></param>
+            <param name="n"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Utility.GZBasic.strCal(System.String,System.Int32)">
+            <summary>
+            截取字符串。不足以 "..."返回
+            参数说明：1、要接取得字符串 2、保留的字节数。
+            </summary>
+            <param name="str">要接取得字符串</param>
+            <param name="len">保留的字节数。按半角计算</param>
+            <returns>指定长度的字符串</returns>
+        </member>
+        <member name="M:GZSoft.Utility.GZBasic.GetChineseSpell(System.String)">
+            <summary>
+            得到汉字的首字母
+            参数说明：1、汉字
+            </summary>
+            <param name="strText">汉字</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Utility.GZBasic.ToSBC(System.String)">
+             <summary>
+             转全角的函数(SBC case)
+             参数说明：1、任意字符串 2、全角字符串
+             </summary>
+             <param name="input">任意字符串</param>
+             <returns>全角字符串</returns>
+            <remarks>
+            全角空格为12288，半角空格为32
+            其他字符半角(33-126)与全角(65281-65374)的对应关系是：均相差65248
+            </remarks>
+        </member>
+        <member name="M:GZSoft.Utility.GZBasic.ToDBC(System.String)">
+             <summary> 
+             转半角的函数(DBC case) 
+             参数说明：1、任意字符串 2、半角字符串
+             </summary>
+             <param name="input">任意字符串</param>
+             <returns>半角字符串</returns>
+            <remarks>
+            全角空格为12288，半角空格为32
+            其他字符半角(33-126)与全角(65281-65374)的对应关系是：均相差65248
+            </remarks>
+        </member>
+        <member name="M:GZSoft.Utility.GZBasic.IsToday(System.DateTime)">
+            <summary>
+            是否当天
+            </summary>
+            <param name="dt">判断日期</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Utility.GZBasic.IsToday(System.DateTime,System.DateTime)">
+            <summary>
+            是否同一天
+            </summary>
+            <param name="dt1">判断日期</param>
+            <param name="dt2">判断日期1</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Utility.GZBasic.DateTimeDiff(System.DateTime,System.DateTime,System.String)">
+            <summary>
+            计算两个日期的时间间隔()
+            </summary>
+            <param name="dt1"></param>
+            <param name="dt2"></param>
+            <param name="dateType">d,h,m,s</param>
+            <returns></returns>
+        </member>
+        <member name="T:GZSoft.DBUtility.SQLiteHelper">
+            <summary>
+            数据库操作类(SQLite)
+            </summary>
+        </member>
+        <member name="F:GZSoft.DBUtility.SQLiteHelper.DbConnectionString">
+            <summary>
+            连接字符串
+            </summary>
+        </member>
+        <member name="M:GZSoft.DBUtility.SQLiteHelper.DataBaseExistOrCreate(System.String,System.String)">
+            <summary>
+            检查数据库是否存在，存在返回""不存在创建返回Create
+            </summary>
+            <param name="path">数据库存储目录</param>
+            <param name="dataBaseName">数据库文件名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.DBUtility.SQLiteHelper.CreateTableString(System.String,System.String[],System.String[])">
+            <summary>
+            创建table的语句
+            </summary>
+            <param name="tableName">表名</param>
+            <param name="columns">字段名集合</param>
+            <param name="types">字段类型集合（主键标示等也含在其中）</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.DBUtility.SQLiteHelper.CreateTable(System.String,System.String[],System.String[])">
+            <summary>
+            创建新表
+            </summary>
+            <param name="tableName">表名称</param>
+            <param name="columns">字段集合</param>
+            <param name="types">类型集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.DBUtility.SQLiteHelper.PrepareCommand(System.Data.SQLite.SQLiteCommand,System.Data.SQLite.SQLiteConnection,System.Data.SQLite.SQLiteTransaction,System.String,System.Collections.Generic.IList{System.Data.SQLite.SQLiteParameter})">
+            <summary>
+            创建Command
+            </summary>
+            <param name="cmd">SQLiteCommand</param>
+            <param name="conn">SQLiteConnection</param>
+            <param name="trans">SQLiteTransaction</param>
+            <param name="strSql">SQL</param>
+        </member>
+        <member name="M:GZSoft.DBUtility.SQLiteHelper.MakeSQLiteParameter(System.String,System.Data.DbType,System.Int32,System.Object)">
+            <summary>
+            创建参数
+            </summary>
+            <param name="name">参数名字</param>
+            <param name="type">参数类型</param>
+            <param name="size">参数大小</param>
+            <param name="value">参数值</param>
+            <returns>SQLiteParameter</returns>
+        </member>
+        <member name="M:GZSoft.DBUtility.SQLiteHelper.MakeSQLiteParameter(System.String,System.Data.DbType,System.Object)">
+            <summary>
+            创建参数
+            </summary>
+            <param name="name">参数名字</param>
+            <param name="type">参数类型</param>
+            <param name="value">参数值</param>
+            <returns>SQLiteParameter</returns>
+        </member>
+        <member name="M:GZSoft.DBUtility.SQLiteHelper.AddParameterCollection(System.Data.SQLite.SQLiteCommand,System.Collections.Generic.IList{System.Data.SQLite.SQLiteParameter})">
+            <summary>
+            增加参数
+            </summary>
+            <param name="cmd"></param>
+            <param name="dbParameterCollection"></param>
+        </member>
+        <member name="M:GZSoft.DBUtility.SQLiteHelper.ExecuteNonQuery(System.String)">
+            <summary>
+            执行SQL语句，返回影响的记录数
+            </summary>
+            <param name="strSql">SQL语句</param>
+            <param name="parameter">SQL语句参数</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:GZSoft.DBUtility.SQLiteHelper.ExecuteNonQuery(System.String,System.Collections.Generic.IList{System.Data.SQLite.SQLiteParameter})">
+            <summary>
+            执行SQL语句，返回影响的记录数
+            </summary>
+            <param name="strSql">SQL语句</param>
+            <param name="parameters">SQL参数</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:GZSoft.DBUtility.SQLiteHelper.ExecuteScalar(System.String)">
+            <summary>
+            执行SQL语句，返回第一行第一列
+            </summary>
+            <param name="strSql">SQL语句</param>
+            <returns>第一行第一列</returns>
+        </member>
+        <member name="M:GZSoft.DBUtility.SQLiteHelper.ExecuteScalar(System.String,System.Collections.Generic.IList{System.Data.SQLite.SQLiteParameter})">
+            <summary>
+            执行SQL语句，返回第一行第一列
+            </summary>
+            <param name="strSql">SQL语句</param>
+            <param name="parameters">SQL参数</param>
+            <returns>第一行第一列</returns>
+        </member>
+        <member name="M:GZSoft.DBUtility.SQLiteHelper.ExecuteSqlTran(System.Collections.ArrayList)">
+            <summary>
+            执行多条SQL语句，实现数据库事务。
+            </summary>
+            <param name="sqlStringList">多条SQL语句</param>        
+        </member>
+        <member name="M:GZSoft.DBUtility.SQLiteHelper.ExecuteReader(System.String)">
+            <summary>
+             执行查询语句，返回SQLiteDataReader(使用该方法切记要手工关闭SQLiteDataReader和连接)
+            </summary>
+            <param name="strSql">Sql</param>
+            <returns>SQLiteDataReader</returns>
+        </member>
+        <member name="M:GZSoft.DBUtility.SQLiteHelper.ExecuteReader(System.String,System.Collections.Generic.IList{System.Data.SQLite.SQLiteParameter})">
+            <summary>
+             执行查询语句，返回SQLiteDataReader(使用该方法切记要手工关闭SQLiteDataReader和连接)
+            </summary>
+            <param name="strSql">Sql</param>
+            <param name="parameters">Sql</param>
+            <returns>SQLiteDataReader</returns>
+        </member>
+        <member name="M:GZSoft.DBUtility.SQLiteHelper.ExecuteDataTable(System.String)">
+            <summary>
+            执行SQL，返回DataTable
+            </summary>
+            <param name="strSql">Sql</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:GZSoft.DBUtility.SQLiteHelper.ExecuteDataTable(System.String,System.Collections.Generic.IList{System.Data.SQLite.SQLiteParameter})">
+            <summary>
+            执行SQL，返回DataTable
+            </summary>
+            <param name="strSql">Sql</param>
+            <param name="parameters">parameters</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:GZSoft.DBUtility.SQLiteHelper.ExecuteDataSet(System.String)">
+            <summary>
+            执行SQL，返回DataSet
+            </summary>
+            <param name="strSql">Sql</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:GZSoft.DBUtility.SQLiteHelper.ExecuteDataSet(System.String,System.Collections.Generic.IList{System.Data.SQLite.SQLiteParameter})">
+            <summary>
+            执行SQL，返回DataSet
+            </summary>
+            <param name="strSql">Sql</param>
+            <param name="parameters">parameters</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:GZSoft.DBUtility.SQLiteHelper.ExecuteDataTable(System.String,System.Collections.Generic.IList{System.Data.SQLite.SQLiteParameter},System.Int32,System.Int32)">
+            <summary>
+            执行SQL返回指定起始位置和页大小的DataTable
+            </summary>
+            <param name="strSql"></param>
+            <param name="parameters"></param>
+            <param name="currentPage">当前页</param>
+            <param name="pageSize">页大小</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:GZSoft.DBUtility.SQLiteHelper.GetCount(System.String)">
+            <summary>
+            取数量（select count(*)）
+            </summary>
+            <param name="strSql">Sql</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.DBUtility.SQLiteHelper.GetCount(System.String,System.Collections.Generic.IList{System.Data.SQLite.SQLiteParameter})">
+            <summary>
+            取数量（select count(*)）
+            </summary>
+            <param name="strSql">Sql</param>
+            <param name="parameters">parameters</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.DBUtility.SQLiteHelper.Exists(System.String)">
+            <summary>
+            检查是否存在
+            </summary>
+            <param name="strSql">Sql</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.DBUtility.SQLiteHelper.Exists(System.String,System.Collections.Generic.IList{System.Data.SQLite.SQLiteParameter})">
+            <summary>
+            检查是否存在
+            </summary>
+            <param name="strSql">Sql</param>
+            <param name="parameters">parameters</param>
+            <returns></returns>
+        </member>
+        <member name="T:GZSoft.Safety.VerifyHelper">
+            <summary>
+            数据校验类
+            </summary>
+        </member>
+        <member name="M:GZSoft.Safety.VerifyHelper.IsNumber(System.String)">
+            <summary>
+            是否数字字符串
+            参数说明：1、输入字符串
+            </summary>
+            <param name="inputData">输入字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Safety.VerifyHelper.IsNumberSign(System.String)">
+            <summary>
+            是否数字字符串 可带正负号
+            参数说明：1、输入字符串
+            </summary>
+            <param name="inputData">输入字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Safety.VerifyHelper.IsDecimal(System.String)">
+            <summary>
+            是否是浮点数
+            参数说明：1、输入字符串
+            </summary>
+            <param name="inputData">输入字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Safety.VerifyHelper.IsDecimalSign(System.String)">
+            <summary>
+            是否是浮点数 可带正负号
+            参数说明：1、输入字符串
+            </summary>
+            <param name="inputData">输入字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Safety.VerifyHelper.IsDateTime(System.String)">
+            <summary>
+            判断用户输入是否为日期
+            参数说明：1、输入字符串
+            </summary>
+            <param name="strValue">输入字符串</param>
+            <returns></returns>
+            <remarks>
+            可判断格式如下（其中-可替换为/，不影响验证)
+            YYYY | YYYY-MM | YYYY-MM-DD | YYYY-MM-DD HH:MM:SS | YYYY-MM-DD HH:MM:SS.FFF
+            </remarks>
+        </member>
+        <member name="M:GZSoft.Safety.VerifyHelper.CheckDate(System.String,System.String@,System.String@)">
+            <summary>
+            检查是否为日期型
+            </summary>
+            <param name="str"></param>
+            <param name="OutDate"></param>
+            <param name="title"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Safety.VerifyHelper.IfValidDate(System.String,System.String@)">
+            <summary>
+            是否为日期型
+            </summary>
+            <param name="str"></param>
+            <param name="title"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Safety.VerifyHelper.IsLeapYear(System.Int32)">
+            <summary>
+            判断是否为闰年
+            </summary>
+            <param name="iYear">Year</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Safety.VerifyHelper.IfValidtime(System.String,System.String@)">
+            <summary>
+            
+            </summary>
+            <param name="timestr"></param>
+            <param name="title"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Safety.VerifyHelper.IfValidnumb(System.String,System.Boolean,System.Int32,System.Int32,System.String@)">
+            <summary>
+            判断是否为合法的数字
+            </summary>
+            <param name="numb">待校验的数字</param>
+            <param name="flg">是否要进行范围校验 True要 </param>
+            <param name="maxval">最大值</param>
+            <param name="minval">最小值</param>
+            <param name="title">描述</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Safety.VerifyHelper.IsInt(System.String)">
+            <summary>
+            判断是否为整数。是返回true 否返回false。可以传入null。
+            </summary>
+            <param name="strVal">要判断的字符</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Safety.VerifyHelper.IsHasCHZN(System.String)">
+            <summary>
+            检测是否有中文字符
+            参数说明：1、输入字符串
+            </summary>
+            <param name="inputData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Safety.VerifyHelper.IsEmail(System.String)">
+            <summary>
+            是否是浮点数 可带正负号
+            参数说明：1、输入字符串
+            </summary>
+            <param name="inputData">输入字符串</param>
+            <returns></returns>
+        </member>
+        <member name="T:GZSoft.DBUtility.DbHelper">
+            <summary>
+            数据库操作类(通用)
+            </summary>
+        </member>
+        <member name="F:GZSoft.DBUtility.DbHelper.dbProviderName">
+            <summary>
+            默认数据连接引擎(只读)
+            </summary>
+        </member>
+        <member name="F:GZSoft.DBUtility.DbHelper.dbConnectionString">
+            <summary>
+            默认数据库连接字符(只读)
+            </summary>
+        </member>
+        <member name="M:GZSoft.DBUtility.DbHelper.GetDbConnectionString(System.String)">
+             <summary>
+            取指定连接字符的据库连接字符
+             </summary>
+             <param name="connKey">Key</param>
+             <returns></returns>
+        </member>
+        <member name="M:GZSoft.DBUtility.DbHelper.GetDbProviderName(System.String)">
+            <summary>
+            取指定连接字符的数据连接引擎
+            </summary>
+            <param name="connKey">Key</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.DBUtility.DbHelper.CommandTimeout">
+            <summary>
+            取超时时间
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.DBUtility.DbHelper.CreateConnection">
+            <summary>
+            默认创建连接实例
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.DBUtility.DbHelper.CreateConnection(System.String)">
+            <summary>
+            根据字符串创建连接实例(连接引擎为默认的引擎)
+            </summary>
+            <param name="connectionString">连接字符</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.DBUtility.DbHelper.CreateConnection(System.String,System.String)">
+            <summary>
+             根据字符串和连接引擎，创建连接实例
+            </summary>
+            <param name="connectionString">连接字符串</param>
+            <param name="providerName">数据库引擎</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.DBUtility.DbHelper.GetCommand(System.String,System.Data.CommandType,System.Data.Common.DbConnection)">
+            <summary>
+             创建Command对象
+             </summary>
+             <param name="commandText"></param>
+             <param name="cmdType"></param>
+             <param name="myconnection">连接实例</param>
+             <returns></returns>
+        </member>
+        <member name="M:GZSoft.DBUtility.DbHelper.CreateSqlParameter(System.String,System.Data.SqlDbType,System.Int32,System.Object)">
+            <summary>
+            创建参数(SQLSERVER)
+            </summary>
+            <param name="name">参数名字</param>
+            <param name="type">参数类型</param>
+            <param name="size">参数大小</param>
+            <param name="value">参数值</param>
+            <returns>DbParameter</returns>
+        </member>
+        <member name="M:GZSoft.DBUtility.DbHelper.CreateSqlParameter(System.String,System.Data.SqlDbType,System.Object)">
+            <summary>
+            创建参数(SQLSERVER)
+            </summary>
+            <param name="name">参数名字</param>
+            <param name="type">参数类型</param>
+            <param name="value">参数值</param>
+            <returns>DbParameter</returns>
+        </member>
+        <member name="M:GZSoft.DBUtility.DbHelper.AddParameterCollection(System.Data.Common.DbCommand,System.Collections.Generic.IList{System.Data.Common.DbParameter})">
+            <summary>
+            增加参数
+            </summary>
+            <param name="cmd"></param>
+            <param name="dbParameters"></param>
+        </member>
+        <member name="M:GZSoft.DBUtility.DbHelper.CheckDbConnection">
+            <summary>
+            检测连接（默认连接）
+            </summary>
+            <returns>true为成功，false为失败</returns>
+        </member>
+        <member name="M:GZSoft.DBUtility.DbHelper.CheckDbConnection(System.String)">
+            <summary>
+            检测连接（使用指定的Web.Config的配置的KEY）
+            参数说明：1、连接配置的key(Web.config)
+            </summary>
+            <param name="connKey">连接配置的key(Web.config)</param>
+            <returns>true为成功，false为失败</returns>
+        </member>
+        <member name="M:GZSoft.DBUtility.DbHelper.ExecuteDataSet(System.Data.Common.DbCommand,System.Data.Common.DbTransaction)">
+            <summary>
+            执行SQL或存储过程，返回DataSet
+            </summary>
+            <param name="cmd">DbCommand</param>
+            <param name="dbTrans">DbTransaction</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.DBUtility.DbHelper.ExecuteDataSet(System.Data.Common.DbCommand,System.Data.Common.DbTransaction,System.String)">
+            <summary>
+            执行SQL或存储过程，返回DataSet
+            </summary>
+            <param name="cmd">DbCommand</param>
+            <param name="dbTrans">DbTransaction</param>
+            <param name="providerName">providerName</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.DBUtility.DbHelper.ExecuteDataTable(System.Data.Common.DbCommand,System.Data.Common.DbTransaction)">
+            <summary>
+            执行SQL或存储过程，返回DataTable
+            </summary>
+            <param name="cmd">DbCommand</param>
+            <param name="dbTrans">DbTransaction</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:GZSoft.DBUtility.DbHelper.ExecuteDataTable(System.Data.Common.DbCommand,System.Data.Common.DbTransaction,System.String)">
+            <summary>
+            执行SQL或存储过程，返回DataTable
+            </summary>
+            <param name="cmd">DbCommand</param>
+            <param name="dbTrans">DbTransaction</param>
+            <param name="providerName">dbProviderName</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:GZSoft.DBUtility.DbHelper.ExecuteDataSet(System.Data.Common.DbCommand,System.Data.Common.DbTransaction,System.Int32,System.Int32)">
+            <summary>
+            执行SQL或存储过程，返回指定起始位置和页大小的DataSet
+            </summary>
+            <param name="cmd">DbCommand</param>
+            <param name="dbTrans">DbTransaction</param>
+            <param name="startRecord">起始位置</param>
+            <param name="pageSize">页大小</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:GZSoft.DBUtility.DbHelper.ExecuteDataSetBySql(System.String)">
+            <summary>
+            执行SQL，返回DataSet （使用默认连接配置）
+            参数说明：SQL语句
+            </summary>
+            <param name="strSql">SQL语句</param>
+            <returns></returns>
+        </member>
+        <!-- 对于成员“M:GZSoft.DBUtility.DbHelper.ExecuteDataSetBySql(System.String,System.Collections.Generic.IList{System.Data.Common.DbParameter})”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:GZSoft.DBUtility.DbHelper.ExecuteDataSetBySql(System.String,System.Collections.Generic.IList{System.Data.Common.DbParameter},System.Int32,System.Int32)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:GZSoft.DBUtility.DbHelper.ExecuteDataSetBySql(System.String,System.Collections.Generic.IList{System.Data.Common.DbParameter},System.String)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:GZSoft.DBUtility.DbHelper.ExecuteDataSetBySql(System.String,System.Collections.Generic.IList{System.Data.Common.DbParameter},System.String,System.Int32,System.Int32)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:GZSoft.DBUtility.DbHelper.ExecuteDataSetBySql(System.String,System.Collections.Generic.IList{System.Data.Common.DbParameter},System.Data.Common.DbConnection)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:GZSoft.DBUtility.DbHelper.ExecuteDataSetBySql(System.String,System.Collections.Generic.IList{System.Data.Common.DbParameter},System.Data.Common.DbConnection,System.Int32,System.Int32)”忽略有格式错误的 XML 注释 -->
+        <member name="M:GZSoft.DBUtility.DbHelper.ExecuteDataSetByProc(System.String)">
+            <summary>
+            执行存储过程，返回DataSet（使用默认连接配置）
+            参数说明：存储过程名称
+            </summary>
+            <param name="strProdName">存储过程名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.DBUtility.DbHelper.ExecuteDataSetByProc(System.String,System.Collections.Generic.IList{System.Data.Common.DbParameter})">
+            <summary>
+            执行存储过程，返回DataSet（使用默认连接配置）
+            参数说明：1、存储过程2、参数
+            </summary>
+            <param name="strProdName">存储过程</param>
+            <param name="parms">参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.DBUtility.DbHelper.ExecuteDataSetByProc(System.String,System.Collections.Generic.IList{System.Data.Common.DbParameter},System.String)">
+            <summary>
+            执行存储过程，返回DataSet（使用指定的Web.Config的配置的KEY）
+            参数说明：1、存储过程2、参数 3、连接配置的key(Web.config)
+            </summary>
+            <param name="strProdName">存储过程</param>
+            <param name="parms">参数</param>
+            <param name="connKey">连接配置的key(Web.config)</param>
+            <returns></returns>
+        </member>
+        <!-- 对于成员“M:GZSoft.DBUtility.DbHelper.ExecuteDataSetByProc(System.String,System.Collections.Generic.IList{System.Data.Common.DbParameter},System.Data.Common.DbConnection)”忽略有格式错误的 XML 注释 -->
+        <member name="M:GZSoft.DBUtility.DbHelper.ExecuteDataTableBySql(System.String)">
+            <summary>
+            执行SQL，返回DataTable （使用默认连接配置）
+            参数说明： SQL语句
+            </summary>
+            <param name="strSql">SQL语句</param>
+            <returns>DataTable</returns>
+        </member>
+        <!-- 对于成员“M:GZSoft.DBUtility.DbHelper.ExecuteDataTableBySql(System.String,System.Collections.Generic.IList{System.Data.Common.DbParameter})”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:GZSoft.DBUtility.DbHelper.ExecuteDataTableBySql(System.String,System.Collections.Generic.IList{System.Data.Common.DbParameter},System.String)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:GZSoft.DBUtility.DbHelper.ExecuteDataTableBySql(System.String,System.Collections.Generic.IList{System.Data.Common.DbParameter},System.Data.Common.DbConnection)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:GZSoft.DBUtility.DbHelper.ExecuteDataTableBySql(System.String,System.Collections.Generic.IList{System.Data.Common.DbParameter},System.Data.Common.DbConnection,System.String)”忽略有格式错误的 XML 注释 -->
+        <member name="M:GZSoft.DBUtility.DbHelper.ExecuteDataTableByProc(System.String)">
+            <summary>
+            执行存储过程，返回DataTable（使用默认连接配置）
+            参数说明： 存储过程名称
+            </summary>
+            <param name="strProdName">存储过程名称</param>
+            <returns>DataTable</returns>
+        </member>
+        <!-- 对于成员“M:GZSoft.DBUtility.DbHelper.ExecuteDataTableByProc(System.String,System.Collections.Generic.IList{System.Data.Common.DbParameter})”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:GZSoft.DBUtility.DbHelper.ExecuteDataTableByProc(System.String,System.Collections.Generic.IList{System.Data.Common.DbParameter},System.String)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:GZSoft.DBUtility.DbHelper.ExecuteDataTableByProc(System.String,System.Collections.Generic.IList{System.Data.Common.DbParameter},System.Data.Common.DbConnection)”忽略有格式错误的 XML 注释 -->
+        <member name="M:GZSoft.DBUtility.DbHelper.ExecuteDbDataReaderBySql(System.String)">
+            <summary>
+            执行SQL，返回DbDataReader,需要手动关闭DbDataReader（使用默认连接配置）
+             参数说明： SQL语句
+            </summary>
+            <param name="strSql">SQL语句</param>
+            <returns>DbDataReader</returns>
+        </member>
+        <!-- 对于成员“M:GZSoft.DBUtility.DbHelper.ExecuteDbDataReaderBySql(System.String,System.Collections.Generic.IList{System.Data.Common.DbParameter})”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:GZSoft.DBUtility.DbHelper.ExecuteDbDataReaderBySql(System.String,System.Collections.Generic.IList{System.Data.Common.DbParameter},System.String)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:GZSoft.DBUtility.DbHelper.ExecuteDbDataReaderBySql(System.String,System.Collections.Generic.IList{System.Data.Common.DbParameter},System.Data.Common.DbConnection)”忽略有格式错误的 XML 注释 -->
+        <member name="M:GZSoft.DBUtility.DbHelper.ExecuteDbDataReaderByProc(System.String)">
+            <summary>
+            执行存储过程，返回DbDataReader,需要手动关闭DbDataReader（使用默认连接配置）
+            参数说明： 存储过程名称
+            </summary>
+            <param name="strProdName">存储过程名称</param>
+            <returns>DbDataReader</returns>
+        </member>
+        <!-- 对于成员“M:GZSoft.DBUtility.DbHelper.ExecuteDbDataReaderByProc(System.String,System.Collections.Generic.IList{System.Data.Common.DbParameter})”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:GZSoft.DBUtility.DbHelper.ExecuteDbDataReaderByProc(System.String,System.Collections.Generic.IList{System.Data.Common.DbParameter},System.String)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:GZSoft.DBUtility.DbHelper.ExecuteDbDataReaderByProc(System.String,System.Collections.Generic.IList{System.Data.Common.DbParameter},System.Data.Common.DbConnection)”忽略有格式错误的 XML 注释 -->
+        <member name="M:GZSoft.DBUtility.DbHelper.ExecuteNonQueryBySql(System.String)">
+            <summary>
+            执行SQL，返回受影响行数 （使用默认连接配置）
+            参数说明： SQL语句 
+            </summary>
+            <param name="strSql"> SQL语句 </param>
+            <returns>影响行数</returns>
+        </member>
+        <!-- 对于成员“M:GZSoft.DBUtility.DbHelper.ExecuteNonQueryBySql(System.String,System.Collections.Generic.IList{System.Data.Common.DbParameter})”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:GZSoft.DBUtility.DbHelper.ExecuteNonQueryBySql(System.String,System.Collections.Generic.IList{System.Data.Common.DbParameter},System.String)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:GZSoft.DBUtility.DbHelper.ExecuteNonQueryBySql(System.String,System.Collections.Generic.IList{System.Data.Common.DbParameter},System.Data.Common.DbConnection)”忽略有格式错误的 XML 注释 -->
+        <member name="M:GZSoft.DBUtility.DbHelper.ExecuteNonQueryBySql(System.Object)">
+             <summary>
+            执行多条SQL语句，实现数据库事务，抛出错误回滚。（使用默认连接配置）
+              参数说明： 1、Hashtable（或SortedList）SQL语句集合（key为sql语句，value是该语句的SqlParameter[]）
+             </summary>
+             <param name="sqlList">SQL的Hashtable（或SortedList）（key为sql语句，value是该语句的SqlParameter[]</param>
+        </member>
+        <member name="M:GZSoft.DBUtility.DbHelper.ExecuteScalarBySql(System.String,System.Collections.Generic.IList{System.Data.Common.DbParameter},GZSoft.DBUtility.DbHelper.ExecuteScalarEvent)">
+             <summary>
+            执行多条SQL语句，实现数据库事务，抛出错误回滚。（使用指定连接实例）,并返回主表语句执行的第一行第一列数据：一般用于主附表插入，修改操作
+             调用方法： object retVal = GZSoft.DBUtility.DbHelper.ExecuteScalarBySql(strSql.ToString(), parameters, new DBUtility.DbHelper.ExecuteScalarEvent((o) =>{Hashtable hashTable=new hashTable();return hashTable;}));
+            参数说明： 1、srSql 执行主表语句 2、parms主表参数  3 生成附表的Hashtable的委托
+             </summary>
+             <param name="srSql">执行主表语句</param>
+             <param name="parms">主表参数</param>
+             <param name="scalarEvent">生成附表的Hashtable的委托（主表事务执行结束后，触发的回调函数，并执行）</param>
+             <returns></returns>
+        </member>
+        <member name="M:GZSoft.DBUtility.DbHelper.ExecuteNonQueryBySql(System.Object,System.String)">
+             <summary>
+            执行多条SQL语句，实现数据库事务，抛出错误回滚。（使用指定的Web.Config的配置的KEY）
+              参数说明： 1、Hashtable（或SortedList）SQL语句集合（key为sql语句，value是该语句的SqlParameter[]） 2、连接配置的key(Web.config)
+             </summary>
+             <param name="sqlList">SQL语句的Hashtable（或SortedList）（key为sql语句，value是该语句的SqlParameter[]</param>
+             <param name="connKey">连接配置的key(Web.config)</param>
+        </member>
+        <member name="M:GZSoft.DBUtility.DbHelper.ExecuteScalarBySql(System.String,System.Collections.Generic.IList{System.Data.Common.DbParameter},GZSoft.DBUtility.DbHelper.ExecuteScalarEvent,System.String)">
+             <summary>
+            执行多条SQL语句，实现数据库事务，抛出错误回滚。（使用指定连接实例）,并返回主表语句执行的第一行第一列数据：一般用于主附表插入，修改操作
+             调用方法： object retVal = GZSoft.DBUtility.DbHelper.ExecuteScalarBySql(strSql.ToString(), parameters, new DBUtility.DbHelper.ExecuteScalarEvent((o) =>{Hashtable hashTable=new hashTable();return hashTable;}));
+            参数说明： 1、srSql 执行主表语句 2、parms主表参数  3 生成附表的Hashtable的委托
+             </summary>
+             <param name="srSql">执行主表语句</param>
+             <param name="parms">主表参数</param>
+             <param name="scalarEvent">生成附表的Hashtable（或SortedList）的委托（主表事务执行结束后，触发的回调函数，并执行）</param>
+             <param name="connKey">连接配置的key(Web.config)</param>
+        </member>
+        <member name="M:GZSoft.DBUtility.DbHelper.ExecuteNonQueryBySql(System.Object,System.Data.Common.DbConnection)">
+             <summary>
+            执行多条SQL语句，实现数据库事务，抛出错误回滚。（使用指定连接实例）
+            参数说明： 1、Hashtable（或SortedList）SQL语句集合（key为sql语句，value是该语句的SqlParameter[]） 3、连接实例
+             </summary>
+             <param name="sqlList">SQL语句的Hashtable（或SortedList）（key为sql语句，value是该语句的SqlParameter[]</param>
+             <param name="myconnection">连接实例</param>
+        </member>
+        <member name="M:GZSoft.DBUtility.DbHelper.ExecuteScalarBySql(System.String,System.Collections.Generic.IList{System.Data.Common.DbParameter},GZSoft.DBUtility.DbHelper.ExecuteScalarEvent,System.Data.Common.DbConnection)">
+             <summary>
+            执行多条SQL语句，实现数据库事务，抛出错误回滚。（使用指定连接实例）,并返回主表语句执行的第一行第一列数据：一般用于主附表插入，修改操作
+             调用方法： object retVal = GZSoft.DBUtility.DbHelper.ExecuteScalarBySql(strSql.ToString(), parameters, new DBUtility.DbHelper.ExecuteScalarEvent((o) =>{Hashtable hashTable=new hashTable();return hashTable;}));
+            参数说明： 1、srSql 执行主表语句 2、parms主表参数  3 生成附表的Hashtable的委托
+             </summary>
+             <param name="srSql">执行主表语句</param>
+             <param name="parms">主表参数</param>
+             <param name="scalarEvent">生成附表的Hashtable的委托（主表事务执行结束后，触发的回调函数，并执行）</param>
+             <param name="myconnection">连接实例</param>
+        </member>
+        <member name="M:GZSoft.DBUtility.DbHelper.ExecuteNonQueryByProc(System.String)">
+            <summary>
+            执行存储过程，返回受影响行数（使用默认连接配置）
+            参数说明： 存储过程名称
+            </summary>
+            <param name="strProdName">存储过程名称</param>
+            <returns>受影响行数</returns>
+        </member>
+        <!-- 对于成员“M:GZSoft.DBUtility.DbHelper.ExecuteNonQueryByProc(System.String,System.Collections.Generic.IList{System.Data.Common.DbParameter})”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:GZSoft.DBUtility.DbHelper.ExecuteNonQueryByProc(System.String,System.Collections.Generic.IList{System.Data.Common.DbParameter},System.String)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:GZSoft.DBUtility.DbHelper.ExecuteNonQueryByProc(System.String,System.Collections.Generic.IList{System.Data.Common.DbParameter},System.Data.Common.DbConnection)”忽略有格式错误的 XML 注释 -->
+        <member name="M:GZSoft.DBUtility.DbHelper.ExecuteScalarBySql(System.String)">
+            <summary>
+            执行SQL，返回第一行第一列（使用默认连接配置）,使用的时候，要判断返回值是否存在对象
+            参数说明： SQL语句
+            </summary>
+            <param name="strSql">SQL语句</param>
+            <returns>返回第一行第一列</returns>
+        </member>
+        <!-- 对于成员“M:GZSoft.DBUtility.DbHelper.ExecuteScalarBySql(System.String,System.Collections.Generic.IList{System.Data.Common.DbParameter})”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:GZSoft.DBUtility.DbHelper.ExecuteScalarBySql(System.String,System.Collections.Generic.IList{System.Data.Common.DbParameter},System.String)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:GZSoft.DBUtility.DbHelper.ExecuteScalarBySql(System.String,System.Collections.Generic.IList{System.Data.Common.DbParameter},System.Data.Common.DbConnection)”忽略有格式错误的 XML 注释 -->
+        <member name="M:GZSoft.DBUtility.DbHelper.ExecuteScalarByProc(System.String)">
+            <summary>
+            执行存储过程，返回第一行第一列（使用默认连接配置）
+            参数说明： 存储过程名称
+            </summary>
+            <param name="strProdName">存储过程名称</param>
+            <returns>返回第一行第一列</returns>
+        </member>
+        <!-- 对于成员“M:GZSoft.DBUtility.DbHelper.ExecuteScalarByProc(System.String,System.Collections.Generic.IList{System.Data.Common.DbParameter})”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:GZSoft.DBUtility.DbHelper.ExecuteScalarByProc(System.String,System.Collections.Generic.IList{System.Data.Common.DbParameter},System.String)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:GZSoft.DBUtility.DbHelper.ExecuteScalarByProc(System.String,System.Collections.Generic.IList{System.Data.Common.DbParameter},System.Data.Common.DbConnection)”忽略有格式错误的 XML 注释 -->
+        <member name="M:GZSoft.DBUtility.DbHelper.GetDataReaderProcPager(System.Int32,System.Int32,System.Int32@,System.String,System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            使用存储过程返回分页的datareader（SQLSERVER使用，配合gzsp_GZSoft_SplitPager）
+            </summary>
+            <param name="currentPageIndex"></param>
+            <param name="pageSize"></param>
+            <param name="recordCount"></param>
+            <param name="strTableName">数据库表名</param>
+            <param name="strPrimarykey">数据库主键名</param>
+            <param name="strFields">查询字段</param>
+            <param name="strOrders">排列字符（不加order by ）</param>
+            <param name="strWhere">查询字符(不加 where)</param>
+            <param name="getCount">是否取总数</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.DBUtility.DbHelper.GetDataTableProcPager(System.Int32,System.Int32,System.Int32@,System.String,System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            使用存储过程返回分页的datatable（SQLSERVER使用，配合gzsp_GZSoft_SplitPager）
+            </summary>
+            <param name="currentPageIndex"></param>
+            <param name="pageSize"></param>
+            <param name="recordCount"></param>
+            <param name="strTableName">数据库表名</param>
+            <param name="strPrimarykey">数据库主键名</param>
+            <param name="strFields">查询字段</param>
+            <param name="strOrders">排列字符（不加order by ）</param>
+            <param name="strWhere">查询字符(不加 where)</param>
+            <param name="getCount">是否取总数</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.DBUtility.DbHelper.CheckExits(System.String)">
+            <summary>
+            扩展-检查是否存在（Sql语句采用select count(*) from tablename的方式，1存在 0不存在 -1出现错误）
+            参数说明：1、SQL语句 2、参数
+            </summary>
+            <param name="strSql">Sql</param>
+            <returns>1存在 0不存在 -1出现错误</returns>
+        </member>
+        <member name="M:GZSoft.DBUtility.DbHelper.CheckExits(System.String,System.Collections.Generic.IList{System.Data.Common.DbParameter})">
+            <summary>
+            扩展-检查是否存在（Sql语句采用select count(*) from tablename的方式，1存在 0不存在 -1出现错误）
+            参数说明：1、SQL语句 2、参数
+            </summary>
+            <param name="strSql">Sql</param>
+            <param name="parms">参数</param>
+            <returns>1存在 0不存在 -1出现错误</returns>
+        </member>
+        <member name="M:GZSoft.DBUtility.DbHelper.CheckExits(System.String,System.Collections.Generic.IList{System.Data.Common.DbParameter},System.String)">
+            <summary>
+            扩展-检查是否存在（Sql语句采用select count(*) from tablename的方式）
+            参数说明：1、SQL语句 2、参数 3、连接配置的key(Web.config)
+            </summary>
+            <param name="strSql">Sql</param>
+            <param name="parms">参数</param>
+            <param name="connKey">连接配置的key(Web.config)</param>
+            <returns>1存在 0不存在 -1出现错误</returns>
+        </member>
+        <member name="T:GZSoft.DBUtility.DbHelper.ExecuteScalarEvent">
+            <summary>
+            生成附表的委托
+            </summary>
+            <param name="obj">返回第一行第一列(select @@identity)或影响行数(select @@RowCount)</param>
+            <returns>Hashtable（或SortedList）</returns>
+        </member>
+        <member name="T:GZSoft.Utility.UBBHelper">
+            <summary>
+            UBB 处理类
+            </summary>
+        </member>
+        <member name="M:GZSoft.Utility.UBBHelper.UBBToHTML(System.String)">
+            <summary>
+            UBBHelper代码处理函数
+            </summary>
+            <param name="sDetail">输入字符串</param>
+            <returns>输出字符串</returns>
+        </member>
+        <member name="T:GZSoft.Utility.ConfigHelper">
+            <summary>
+            Config文件配置
+            </summary>
+        </member>
+        <member name="M:GZSoft.Utility.ConfigHelper.GetConnectionStringsConfig(System.String)">
+            <summary> 
+            依据连接串名字connectionName返回数据连接字符串 
+            </summary>
+            <param name="connectionName"></param>
+        </member>
+        <member name="M:GZSoft.Utility.ConfigHelper.UpdateConnectionStringsConfig(System.String,System.String,System.String)">
+            <summary>
+            更新连接字符串 
+            </summary> 
+            <param name="newName">连接字符串名称</param> 
+            <param name="newConString">连接字符串内容</param> 
+            <param name="newProviderName">数据提供程序名称</param>
+            
+        </member>
+        <member name="M:GZSoft.Utility.ConfigHelper.GetAppConfig(System.String)">
+            <summary> 
+            返回＊.exe.config文件中appSettings配置节的value项 
+            </summary> 
+            <param name="strKey"></param> 
+            <returns></returns> 
+        </member>
+        <member name="M:GZSoft.Utility.ConfigHelper.UpdateAppConfig(System.String,System.String)">
+            <summary>
+            在＊.config文件中appSettings配置节增加一对键、值对 
+            </summary>
+            <param name="newKey"></param>
+            <param name="newValue"></param>
+        </member>
+        <member name="T:GZSoft.Utility.NetEmailHelper">
+            <summary>
+            System.Net.Mail帮助
+            </summary>
+        </member>
+        <member name="M:GZSoft.Utility.NetEmailHelper.Send(System.String,System.String,System.String,System.Collections.Generic.IList{System.String})">
+            <summary> 
+            发送邮件
+            <remarks>
+            email_smtpHost:发送邮件用到的smtp主机
+            email_userName:登录smtp主机时用到的用户名,注意是邮件地址'@'以前的部分
+            email_userName:登录smtp主机时用到的用户密码
+            email_fromAddress:发送者EMAIL地址
+            </remarks>
+            </summary> 
+            <param name="toAddress">收件人邮件地址</param> 
+            <param name="Subject">邮件主题</param> 
+            <param name="bodyHtml">邮件内容</param> 
+            <param name="AttachmentFileList">附件</param>
+        </member>
+        <member name="T:GZSoft.Utility.XmlHelper">
+            <summary>
+            XML帮助类
+            </summary>
+        </member>
+        <member name="M:GZSoft.Utility.XmlHelper.UpdateConfigValueOfKey(System.String,System.String,System.String)">
+            <summary>
+             设置Config值
+            </summary>
+            <param name="filePath">CONFIG文件路径</param>
+            <param name="Key"></param>
+            <param name="Value"></param>
+        </member>
+        <member name="T:GZSoft.Utility.ZipHelper">
+             <summary>
+            ZipHelper 的摘要说明
+             </summary>
+        </member>
+        <member name="M:GZSoft.Utility.ZipHelper.ZipFiles(System.Collections.Generic.IList{System.String},System.String)">
+            <summary>
+            压缩参数指定的文件(多文件)
+            </summary>
+            <param name="files">压缩的路径列表</param>
+            <param name="zipFilePath">ZIP文件完整路径，包括文件名</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Utility.ZipHelper.ZipFilesToMemoryStream(System.Collections.Generic.IList{System.String},System.String)">
+            <summary>
+            压缩参数指定的文件(多文件)
+            </summary>
+            <param name="files">压缩的路径列表</param>
+            <param name="zipFilePath">ZIP文件完整路径，包括文件名</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Utility.ZipHelper.ZipFile(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            压缩单个文件
+            </summary>
+            <param name="fileToZip">要压缩的文件</param>
+            <param name="zipedFile">压缩后的文件</param>
+            <param name="compressionLevel">压缩等级</param>
+            <param name="blockSize">每次写入大小</param>
+        </member>
+        <member name="M:GZSoft.Utility.ZipHelper.ZipFile(System.String,System.String)">
+            <summary>
+            压缩单个文件
+            </summary>
+            <param name="fileToZip">要进行压缩的文件名</param>
+            <param name="zipedFile">压缩后生成的压缩文件名</param>
+        </member>
+        <member name="M:GZSoft.Utility.ZipHelper.ZipFiles(System.String,System.String[],System.String,System.String)">
+            <summary>
+            多文件压缩
+            </summary>
+            <param name="fileToZip"></param>
+            <param name="srcFiles"></param>
+            <param name="folderName"></param>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Utility.ZipHelper.ZipFileDirectory(System.String,System.String)">
+            <summary>
+            压缩多层目录
+            </summary>
+            <param name="strDirectory">压缩目录</param>
+            <param name="zipedFile">压缩文件流</param>
+        </member>
+        <member name="M:GZSoft.Utility.ZipHelper.ZipSetp(System.String,ICSharpCode.SharpZipLib.Zip.ZipOutputStream,System.String)">
+            <summary>
+            递归遍历目录
+            </summary>
+            <param name="strDirectory"></param>
+            <param name="s"></param>
+            <param name="parentPath"></param>
+        </member>
+        <member name="M:GZSoft.Utility.ZipHelper.UnZip(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            解压缩一个 zip 文件。
+            </summary>
+            <param name="zipedFile">要解压的 zip 文件。</param>
+            <param name="strDirectory">zip 文件的解压目录。</param>
+            <param name="password">zip 文件的密码。</param>
+            <param name="overWrite">是否覆盖已存在的文件。</param>
+        </member>
+        <member name="T:GZSoft.Safety.SafeHelper">
+            <summary>
+            安全帮助类（密码加密、SQL参数的过滤、SQL防注入）
+            </summary>
+        </member>
+        <member name="M:GZSoft.Safety.SafeHelper.StripHtml(System.String)">
+            <summary>
+            除去所有在HTML元素中标记
+            参数说明：1、源字符
+            </summary>
+            <param name="strHtml">源字符</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Safety.SafeHelper.StripHTML(System.String)">
+            <summary>
+             过滤掉 Strip代码（一般用于防止跨站攻击）
+            参数说明：1、源字符
+            </summary>
+            <param name="strHtml">源字符</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Safety.SafeHelper.RemoveIllegalString(System.String)">
+            <summary>
+            过滤非法字符,便于插入数据库
+            参数说明：1、源字符
+            </summary>
+            <param name="str">源字符</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Safety.SafeHelper.CheckIllegalSql(System.String)">
+            <summary>
+            监测是否有非法字符（防止SQL注入）
+            参数说明：1、源字符
+            </summary>
+            <param name="str">待处理的字符串</param>
+            <returns></returns>
+        </member>
+        <member name="T:GZSoft.Utility.IPHelper">
+            <summary>
+            用于ＩＰ地址查询类
+            </summary>
+        </member>
+        <member name="M:GZSoft.Utility.IPHelper.IpToInt(System.String)">
+            <summary>
+            IP地址转换成Int数据
+            </summary>
+            <param name="Ip"> IP地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Utility.IPHelper.IPLocation">
+            <summary>
+            查询执行
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Utility.IPHelper.IPLocation(System.String,System.String)">
+            <summary>
+            查询
+            </summary>
+            <param name="strDatPath">数据库路径</param>
+            <param name="Ip">IP地址</param>
+            <returns></returns>
+        </member>
+        <member name="P:GZSoft.Utility.IPHelper.DatPath">
+            <summary>
+            QQWry.Dat所在位置
+            </summary>
+        </member>
+        <member name="P:GZSoft.Utility.IPHelper.IP">
+            <summary>
+            待查询的IP地址
+            </summary>
+        </member>
+        <member name="P:GZSoft.Utility.IPHelper.Country">
+            <summary>
+            IP地址所在的国家
+            </summary>
+        </member>
+        <member name="P:GZSoft.Utility.IPHelper.Local">
+            <summary>
+            详细描述
+            </summary>
+        </member>
+        <member name="P:GZSoft.Utility.IPHelper.ErrMsg">
+            <summary>
+            错误描述
+            </summary>
+        </member>
+        <member name="T:GZSoft.Utility.JsonHelper">
+            <summary>
+            Json帮助类，需要引用Newtonsoft.Json.dll
+            </summary>
+        </member>
+        <member name="M:GZSoft.Utility.JsonHelper.ReadInfo``1(System.String)">
+            <summary>
+            文件方式：读取信息（Json）未加密的过的文件
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="filePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Utility.JsonHelper.ReadInfo``1(System.String,System.Boolean)">
+            <summary>
+            文件方式：读取信息（Json）
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="filePath"></param>
+            <param name="isSafe">是否是加密过的文件</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Utility.JsonHelper.WritingInfo``1(System.String,``0)">
+             <summary>
+            文件方式：写信息（Json）不对文件进行加密
+             </summary>
+             <typeparam name="T"></typeparam>
+             <param name="fileName"></param>
+             <param name="t"></param>
+             <returns></returns>
+        </member>
+        <member name="M:GZSoft.Utility.JsonHelper.WritingInfo``1(System.String,``0,System.Boolean)">
+            <summary>
+            文件方式：写信息（Json）可设置是否加密
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="fileName">保存文件的绝对路径</param>
+            <param name="t"></param>
+            <param name="isSafe">是否对保存的文件内容加密</param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Utility.JsonHelper.Serialize``1(``0)">
+            <summary>
+            序列化(Json)
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="objectToSerialize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GZSoft.Utility.JsonHelper.Deserialize``1(System.String)">
+            <summary>
+            反序列化(Json)
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="jsonString">JSon字符串</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
